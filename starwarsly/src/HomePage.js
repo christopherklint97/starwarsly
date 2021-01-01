@@ -1,25 +1,29 @@
-import React from 'react';
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 
 import { resetAll } from "./actions/reset";
 
+/**
+ * Hompage component displaying button for resetting
+ * movies, or A New Hope
+ */
 
 function HomePage() {
-  const loaded = useSelector(st => st.films[1] !== undefined);
+  // return true if there are movies in the store, otherwise false
+  const loaded = useSelector((st) => st.films[1] !== undefined);
+
+  // return store.dispatch using the useDispatch hook
   const dispatch = useDispatch();
 
+  // reset all states in the store
   function reset() {
     dispatch(resetAll());
   }
-  
+
   return (
     <>
       {loaded ? (
-        <button
-          className="btn btn-danger btn-block btn-lg"
-          onClick={reset}
-        >
+        <button className="btn btn-danger btn-block btn-lg" onClick={reset}>
           Reset To Fresh Exploration
         </button>
       ) : (

@@ -6,7 +6,13 @@ import './App.css';
 import NavBar from "./NavBar";
 import Routes from "./Routes";
 
-
+/**
+ * App component containing the entire app, including:
+ * - BrowserRouter from React Router
+ * - Navbar component
+ * - Routes from React Router
+ * 
+ */
 function App() {
   return (
     <div className="App container">

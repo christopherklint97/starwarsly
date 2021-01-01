@@ -7,15 +7,20 @@ import thunk from "redux-thunk";
 import root from "./reducers/root";
 import { createStore, applyMiddleware } from "redux";
 
+/**
+ * Redux store using Redux Persist which saves the redux store to
+ * the local storage
+ */
 const persistConfig = {
   key: "root",
   storage,
   stateReconciler: autoMergeLevel2
 };
 
+// the enhanced reducer using a config object and reducer function
 const persistedReducer = persistReducer(persistConfig, root);
 
-
+// Create Redux store with Dev Tools and Thunk
 export const store = createStore(
   persistedReducer,
   composeWithDevTools(

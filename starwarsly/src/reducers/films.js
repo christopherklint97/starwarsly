@@ -2,7 +2,12 @@ import { LOAD_FILM, RESET_ALL } from "../actions/types";
 
 const INITIAL_STATE = {};
 
-
+/**
+ * Films reducer
+ *
+ * @param {{}} state
+ * @param {{ type, payload }} action
+ */
 function films(state = INITIAL_STATE, action) {
   switch (action.type) {
     case RESET_ALL:
@@ -11,7 +16,7 @@ function films(state = INITIAL_STATE, action) {
     case LOAD_FILM:
       return {
         ...state,
-        [action.payload.id]: { ...action.payload }
+        [action.payload.id]: { ...action.payload },
       };
 
     default:

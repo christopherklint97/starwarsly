@@ -1,8 +1,14 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import "./NavBar.css"
 
+/**
+ * Navbar for app, providing links to:
+ * - Homepage
+ * - Films
+ * - Planets
+ * - People
+ */
 
 function NavBar() {
   return (

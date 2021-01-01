@@ -8,6 +8,9 @@ import Planet from "./Planet";
 import Person from "./Person";
 import HomePage from "./HomePage";
 
+/**
+ * Handles all routes
+ */
 function Routes() {
   return (
     <Switch>
